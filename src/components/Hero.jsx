@@ -4,6 +4,12 @@ import { Rocket, Play } from 'lucide-react';
 import Typewriter from './Typewriter';
 
 function AnimatedAIBackdrop() {
+  const lineSets = [
+    [ [10, 18], [24, 24], [39, 17], [52, 26] ],
+    [ [62, 72], [70, 63], [79, 69], [88, 60] ],
+    [ [18, 68], [30, 60], [44, 70], [57, 63] ]
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* Navy grid */}
@@ -56,11 +62,7 @@ function AnimatedAIBackdrop() {
           );
         })}
 
-        {[\
-          [[10, 18], [24, 24], [39, 17], [52, 26]],\
-          [[62, 72], [70, 63], [79, 69], [88, 60]],\
-          [[18, 68], [30, 60], [44, 70], [57, 63]]
-        ].map((points, idx) => (
+        {lineSets.map((points, idx) => (
           <motion.svg
             key={idx}
             className="absolute inset-0"
